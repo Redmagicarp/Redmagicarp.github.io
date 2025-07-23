@@ -1,0 +1,161 @@
+/* ANIMATIONS */
+@keyframes HighlightHeader
+{
+    from {left: -5%;}
+    to {left: 105%;}
+
+}
+
+@keyframes liveBackground
+{
+    0% {background:radial-gradient(var(--mainColor) 50%, var(--mainColor2));}
+    10% {background:radial-gradient(var(--mainColor) 53%, var(--mainColor2));}
+    20% {background:radial-gradient(var(--mainColor) 58%, var(--mainColor2));}
+    30% {background:radial-gradient(var(--mainColor) 61%, var(--mainColor2));}
+    40% {background:radial-gradient(var(--mainColor) 64%, var(--mainColor2));}
+    50% {background:radial-gradient(var(--mainColor) 69%, var(--mainColor2));}
+    60% {background:radial-gradient(var(--mainColor) 64%, var(--mainColor2));}
+    70% {background:radial-gradient(var(--mainColor) 61%, var(--mainColor2));}
+    80% {background:radial-gradient(var(--mainColor) 58%, var(--mainColor2));}
+    90% {background:radial-gradient(var(--mainColor) 53%, var(--mainColor2));}
+    100% {background:radial-gradient(var(--mainColor) 50%, var(--mainColor2));}
+}
+
+/* COLOR VARS */
+:root /* Change your color here! */
+{
+
+    --mainColor: rgb(50, 21, 77);
+    --mainColor2:rgb(80, 39, 118);
+    --TopEndColor: rgb(17, 4, 43);
+    --SecondaryColor: rgb(43, 12, 60);
+    --SecondaryColor2: rgb(80, 61, 165);
+    --textColor: rgb(209, 228, 252);
+    --highlightColor: rgb(150, 134, 243);
+}
+
+/* INITIAL CSS RULES */
+
+body
+{
+    margin: 0;
+    background:radial-gradient(var(--mainColor) 55%, var(--mainColor2));
+    animation: liveBackground 3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s infinite;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Courier New'; /* Play with fonts here! */
+    color: var(--textColor);
+}
+
+p
+{
+    font-family: 'Verdana'; /* And play with fonts here! */
+    color: var(--textColor);
+}
+
+h1
+{
+    width: 100%;
+    padding: 1% 0;
+    text-align: center;
+    height: 20vh;
+    font-size: 4rem;
+}
+
+section
+{
+    background-color: var(--SecondaryColor);
+    width: 100%;
+    padding: 2% 0;
+    margin: 5% 0;
+    min-height: 70vh;
+}
+
+section div
+{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    gap: 3%
+}
+
+h2
+{
+    color: var(--textColor);
+    border-bottom: var(--highlightColor) 5px solid;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h3
+{
+    color: var(--textColor);
+    background-color: var(--SecondaryColor2);
+    width: 90%;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+nav
+{
+    width: 100%;
+}
+
+nav ul
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li
+{
+    background-color: var(--SecondaryColor2);
+    color: var(--textColor);
+    cursor: pointer;
+    border-radius: 2rem;
+    padding: 0.5rem 2%;
+    border: var(--highlightColor) 2px solid
+
+}
+
+footer
+{
+    width: 100%;
+    padding: 4% 0;
+    background-color: var(--TopEndColor);
+}
+
+footer p
+{
+    margin-left: 2%;
+}
+
+.shiny_header
+{
+    background-color: var(--TopEndColor);
+    position: relative;
+    z-index: -2;
+}
+
+.shiny_header div
+{
+    background: linear-gradient(0.25turn, var(--TopEndColor), var(--highlightColor), var(--TopEndColor));
+    width: 3.5%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+
+    top: 0;
+    left: -5%;
+
+    animation: HighlightHeader 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s;
+}
