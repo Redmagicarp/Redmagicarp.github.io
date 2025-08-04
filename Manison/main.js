@@ -320,8 +320,8 @@ function SendResponse()
     if (container === undefined) {return 0;}
 
     // Create user message element
-    CreateChatBubble(user_input, container, true);
-    CreateChatBubble(AI_response, container);
+    CreateChatBubble(user_input, container);
+    CreateChatBubble(AI_response, container, true);
 
     container.scrollTop = container.scrollHeight;
 
