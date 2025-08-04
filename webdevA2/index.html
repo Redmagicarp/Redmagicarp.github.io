@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=no">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>Interpolation Wireframe</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
+
+        <link rel = "icon" type = "image/x-icon" href = "images/favicon.ico">
+        <link rel="manifest" href="manifest.json">
+
+    </head>
+
+    <body>
+        <!-- Header contains hero page as well as navigation -->
+        <header>
+            <nav id = "header_nav">
+                <div id = "menu_buttons">
+                    <img
+                    id = "hamburger_icon"
+                    src = "images/menu_icon.png"
+                    alt = "Menu Icon"
+                    title = "Menu Icon"
+                    >
+
+                    <button id = "mobile_fullscreen">Enter FullScreen</button>
+                </div>
+
+                <ul>
+                    <li id = "nav_interpolation_intro">
+                        Intro to Interpolation
+                        <div></div>
+                    </li>
+
+                    <li id ="nav_basic_interpolation">
+                        Basic types of Interpolation
+                        <div></div>
+                    </li>
+
+                    <li id = "nav_advanced_interpolation">
+                        Advanced types of Interpolation
+                        <div></div>
+                    </li>
+
+                    <li id = "nav_applications_of_interpolation">
+                        Applications of Interpolation
+                        <div></div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div id = "hero">
+                <canvas></canvas>
+
+                <h1><strong>INTERPOLATION</strong></h1>
+            </div>
+        </header>
+
+        <main>
+            <!--=============================== -->
+            <!-- INTRO TO INTERPOLATION SECTION -->
+            <!-- ============================== -->
+            <section id = "interpolation_intro">
+                <h2>Introduction to interpolation</h2>
+
+                <div>
+                    <article class = "card">
+                        <h3>What is interpolation?</h3>
+                        
+                        <div class = "oneimg_layoutcontainer">
+                            <p>
+                            It is about getting values between 2 already existing points by providing a value normally called 't' where it is between 0 - 1. As 't' represents the 
+                            progress from the first value to the second value
+                            </p>
+
+                            <div>
+                                <img
+                                src ="images/intro_to_interpolation.jpg"
+                                alt = "interpolation example"
+                                title = "intro to interpolation"
+                                >    
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class = "card">
+                        <h3>There are many ways to interpolate values</h3>
+                        
+                        <div class = "twoimg_onetext_layoutcontainer">
+                            <p>Values can be interpolated differently depending on the math behind it. For example, some are interpolated linearly, while others are interpolated 
+                            cubicly. This can lead to <strong>different outcomes</strong> despite having the <strong>same 't' value.</strong>
+                            </p>
+
+
+                            <img
+                            src ="images/linear_interpolation_intro.jpg"
+                            alt = "linear interpolation example"
+                            title = "linear interpolation example"
+                            >
+
+                            <img
+                            src ="images/cubic_interpolation_intro.jpg"
+                            alt = "cubic interpolation example"
+                            title = "Cubic interpolation example"
+                            > 
+                        </div>
+                    </article>
+
+                    <article class = "card">
+                        <h3>The different ways of interpolation can also lead to different input values</h3>
+                        <div class = "oneimg_layoutcontainer">
+                            <p>Interpolation can also differ from methods in terms of the number of values used! This happens when interpolation is done in <strong>2D</strong> instead of
+                                <strong>1D</strong>. Meaning to say 2D interpolation methods such as bi-linear will require 4 values instead of 1!
+                                Here is an example of a simple bi-linear interpolation
+                            </p>
+                                
+                            <div>
+                                <img
+                                src ="images/bilinear_interpolation_intro.jpg"
+                                alt = "Bilinear interpolation example"
+                                title = "Bilinear interpolation example"
+                                > 
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class = "cardcontainer_extender"></div>
+                </div>
+            </section>
+
+
+            <!-- ==================================== -->
+            <!-- BASIC TYPES OF INTERPOLATION SECTION -->
+            <!-- ==================================== -->
+            <section id = "basic_interpolation">
+                <h2>What are the types of basic interpolation?</h2>
+
+                <div class = "interpolationtype_section">
+                    <article id = "linear_interpolation">
+                        <!-- maincontent_container is there to seperate it from the aside -->
+                        <div class = "maincontent_container"> 
+                             <h3>Linear Interpolation</h3>
+
+                            <div class = "articleinfo_container">
+                                <!-- Math explanation must go first as left side is hidden first by animation => Meaning animation text must be visible first -->
+                                <p>The math formula calculates the 'distance' b is from a. Then it multiplies that by a percentage t. Then finally it adds that result back to a!</p>
+                                <p>Linear interpolation is really just to get the result between 2 numbers when you enter a 'progress value' known as t which is usually between 0-1 to represent it in percentage. For example, 0.5 just means 50% from the first value to the second!</p>
+                                
+                                <div>
+                                    <!-- Math Formula img must be at the bottom -->
+                                    <img
+                                    src = "images/linear_interpolation.png"
+                                    alt = "Linear interpolation Graph"
+                                    title = "Linear interpolation"
+                                    >
+
+                                    <img
+                                    src = "images/linear_interpolation_formula.jpg"
+                                    alt = "Linear interpolation equation"
+                                    title = "Linear interpolation equation"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <aside>
+                            <div>
+                                <h4>Fun fact</h4>
+
+                                <p>Linear interpolation was used to make this website!</p>
+                            </div>
+                        </aside>
+                    </article>
+
+                    <article id = "lowdegree_polynomial_interpolation">
+                        <div class = "maincontent_container">
+                            <h3>Low Degree Polynomial Interpolation</h3>
+                            <div class = "articleinfo_container">
+                                <p>The formula is actually a bezier formula of the power which allows for control points to manipulate the shape of the curve!</p>
+                                <p>This type of interpolation simply allows you to interpolate on a curve instead of a straight line which can be controlled with a set number of control points!</p>
+
+                                <div>
+                                    <img
+                                    src = "images/cubic_interpolation.png"
+                                    alt = "Cubic interpolation Graph"
+                                    title = "Cubic interpolation"
+                                    >
+
+                                    <img
+                                    src = "images/cubic_interpolation_formula.jpg"
+                                    alt = "Cubic interpolation equation"
+                                    title = "Cubic interpolation equation"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <aside>
+                            <div>
+                                <h4>Fun Fact</h4>
+
+                                <p>Apart from cubic interpolation which was the example images, there is also quadratic interpolation! Which is just power of 2 instead of 3</p>
+                            </div>
+                        </aside>
+                    </article>
+
+                    <article id = "bilinear_interpolation">
+                        <div class = "maincontent_container">
+                            <h3>Bilinear interpolation</h3>
+                            <div class = "articleinfo_container">
+                                <p>The formula is just linear interpolation but repeated 3 times</p>
+                                <p>It is doing linear interpolation in 2 dimensions, meaning you linear interpolate 2 values first, and then linear interpolate the result of the 2 values to get your final value!</p>
+
+                                <div>
+                                    <img
+                                    src = "images/bilinear_interpolation.png"
+                                    alt = "Bilinear interpolation drawing"
+                                    title = "Bilinear interpolation"
+                                    >
+
+                                    <img
+                                    src = "images/bilinear_interpolation_formula.jpg"
+                                    alt = "Bilinear interpolation equation"
+                                    title = "Bilinear interpolation equation"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <aside>
+                            <div>
+                                <h4>Fun Fact</h4>
+
+                                <p>Bilinear interpolation was used to make one of the minigames in this website!</p>
+                            </div>
+                        </aside>
+                    </article>
+
+                    <article id = "nearest_neighbour1D_interpolation">
+                        <div class = "maincontent_container">
+                            <h3>Nearest Neighbour 1D interpolation</h3>
+                            <div class = "articleinfo_container">
+                                <p>The algorithm just finds the value closest from your target and outputs that closest value in a list</p>
+                                <p>It simply just finds the number closest to what your chosen number from a list of numbers</p>
+
+                                <div>
+                                    <img
+                                    src = "images/nearest_neighbour1D.png"
+                                    alt = "Nearest Neighbour 1D drawing"
+                                    title = "Nearest Neighbour 1D Interpolation"
+                                    >
+
+                                    <img
+                                    src = "images/nearest_neighbour1D_algorithm.jpg"
+                                    alt = "Nearest Neighbour 1D algorithm"
+                                    title = "Nearest Neighbour 1D Logic"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <aside>
+                            <div>
+                                <h4>Fun fact</h4>
+
+                                <p>Rounding off floats to an integer is technically a form of Nearest Neighbour 1D interpolation!</p>
+                            </div>
+                        </aside>
+                    </article>
+                </div>
+            </section>
+
+
+            <!-- ======================================= -->
+            <!-- ADVANCED TYPES OF INTERPOLATION SECTION -->
+            <!-- ======================================= -->
+            <section id = "advanced_interpolation">
+                <h2>What are the types of advanced interpolation?</h2>
+                
+                <div class = "interpolationtype_section">
+                    <div class = "articles">
+                        <article id = "bicubic_interpolation">
+                            <div class = "maincontent_container">
+                                <h3>Bicubic Interpolation</h3>
+
+                                <div class = "articleinfo_container">
+                                    <!-- Math explanation must go first as left side is hidden first by animation => Meaning animation text must be visible first -->
+                                    <p>The bicubic interpolation formula is just the cubic interpolation formula but repeated 5 times</p>
+                                    <p>It is simply doing cubic interpolation in 2 axis, but since each cubic interpolation needs 4 points, you need to interpolate for times in 1 dimension to do one more in the next!</p>
+                                    
+                                    <div>
+                                        <!-- Math Formula img must be at the bottom -->
+                                        <img
+                                        src ="images/bicubic_interpolation.jpg"
+                                        alt = "Bicubic interpolation image"
+                                        title = "Bicubic interpolation"
+                                        >
+                                        <img
+                                        src ="images/bicubic_interpolation_formula.jpg"
+                                        alt = "Linear interpolation"
+                                        title = "Linear interpolation"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <aside>
+                                <div>
+                                    <h4>Fun fact</h4>
+
+                                    <p>This interpolation type is actually used to produce high quality rescaled images in image processors!</p>
+                                </div>
+                            </aside>
+
+                        </article>
+
+                        <article id = "nearest_neighbour2D_interpolation">
+                            <div class = "maincontent_container">
+                                <h3>Nearest Neighbour 2D Interpolation</h3>
+                            
+                                <div class = "articleinfo_container">
+                                    <p>The formula shown is pythagoras theorem for distance as it needs to now deal with diagonal distance for 2D</p>
+                                    <p>It is simply doing nearest_neighbour but in 2 dimensions</p>
+
+                                    <div>
+                                        <img
+                                        src ="images/nearest_neighbour_2D.jpg"
+                                        alt = "Bicubic interpolation image"
+                                        title = "Bicubic interpolation"
+                                        >
+                                        <img
+                                        src ="images/nearest_neighbour_2D_algorithm.jpg"
+                                        alt = "Linear interpolation"
+                                        title = "Linear interpolation"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <aside>
+                                <div>
+                                    <h4>Fun Fact</h4>
+
+                                    <p>It is used in an algorithm called "Constrained Delaunay Triangulation" which is used in computer graphic modelling!</p>
+                                </div>
+                            </aside>
+                        </article>
+
+                        <article id = "mimetic_interpolation">
+                            <div class = "maincontent_container">
+                                <h3>Mimetic interpolation</h3>
+                            
+                                <div class = "articleinfo_container">
+                                    <p>For simplicity, the formula is the linear sum of derivatives</p>
+                                    <p>It basically interpolates derivatives instead of values</p>
+
+                                    <div>
+                                        <img
+                                        src ="images/mimetic_interpolation.png"
+                                        alt = "Bicubic interpolation image"
+                                        title = "Bicubic interpolation"
+                                        >
+                                        <img
+                                        src ="images/mimetic_interpolation_formula.jpg"
+                                        alt = "Linear interpolation"
+                                        title = "Linear interpolation"
+                                        >
+                                    </div>                            
+                                </div>
+                            </div>
+
+                            <aside>
+                                <div>
+                                    <h4>Fun Fact</h4>
+
+                                    <p>It is actually used in physics graphs as mimetic allows for the grpah to preserve real world properties other interpolation methods cant!</p>
+                                </div>
+                            </aside>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- ===================================== -->
+            <!-- APPLICATIONS OF INTERPOLATION SECTION -->
+            <!-- ===================================== -->
+            <section id = "applications_of_interpolation">
+                <h2>What are the applications of interpolation?</h2>
+
+                <article class = "application_article">
+                    <h3 id = "animation_header">Animations</h3>
+
+                    <!-- Info Container -->
+                    <div class = "applicationinfo_container">
+                        <p>Interpolation is used in animation to give that smooth movement you see in animations especially 3D ones. It is also used to animate bones of characters, in animations and games! Some examples include Murder Drones, Zenless Zone Zero and more.</p>
+
+                        <img
+                        src ="images/interpolation_in_blender.png"
+                        alt = "Image of blender animation with interpolation used"
+                        title = "Animating in blender with interpolation"
+                        >
+
+                        <aside>
+                            <h3>Extra info here!</h3>
+                            <p>
+                                Some people animate characters by combining multiple forms of interpolation as trying to represent them with one function can lead to the animation looking unrealistic or not preferred!
+                            </p>
+                        </aside>
+                    </div>
+
+                    <div class = "game_section">
+                        <div class = "game_container" id = "animation_game">
+                            <div id = "hatsune_miku"></div>
+
+                        </div>
+
+                        <div>
+                            <button class = "start_interactive" id = "interactive_0">Start Interactive</button>
+
+                            <div class = "game_controls">
+                                <button>Start Interpolation</button>
+                                <button>Randomize Knives</button>
+
+                                <div id = "animation_inputs" class = "game_inputs">
+                                    <input type = "number" placeholder = "P0 x value (0.0 - 1.0)">
+                                    <input type = "number" placeholder = "P0 y value (0.0 - 1.0)">
+                                    <input type = "number" placeholder = "P1 x value (0.0 - 1.0)">
+                                    <input type = "number" placeholder = "P1 y value (0.0 - 1.0)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class = "application_article">
+                    <h3 id = "perlin_noise_header">Perlin noise</h3>
+
+                    <div class = "applicationinfo_container">
+                        <p>Perlin Noise uses bilinear interpolation in its formula to generate the image shown. Essentially, it takes the values of a point, in a grid, then it interpolates the corners of the grid cell that point is in and output a value between -1 and 1.</p>
+                        
+                        <img
+                        src ="images/perlin_noise.png"
+                        alt = "Perlin Noise image"
+                        title = "Perlin Noise"
+                        >
+
+                        <aside>
+                            <h3>Extra info here!</h3>
+                            <p>
+                                Perlin Noise is used in world generation and texture generation. A famous example of perlin noise being used is the terrain generation in Minecraft!
+                            </p>
+                        </aside>
+                    </div>
+
+                    <div class = "game_section">
+                        <canvas class = "perlin_noise_game_canvas game_container"></canvas>
+                        <div>
+                            <button class = "start_interactive" id = "interactive_1">Start Interactive</button>
+
+                            <div class = "game_controls">
+                                <button>Spawn Troops</button>
+                                <button>Regenerate World</button>
+                                <button>Start Simulation</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </article>
+
+                <article class = "application_article">
+                    <h3 id = "curvepath_header">Curve Path generation</h3>
+
+                    <div class = "applicationinfo_container">
+                        <p>Interpolation helps generate curved paths using low Polynomial interpolation! By placing points along a curved line, the object can then follow these points to go in a curved path!</p>
+                        <img
+                        src ="images/curved_path_application.jpg"
+                        alt = "Image of many missles flying in a curve"
+                        title = "Missle curve path in roblox game"
+                        >
+
+                        <aside>
+                            <h3>Extra info here!</h3>
+
+                            <p>
+                                Some ideas you can have for needing curve path generation can be creating dynamic curve paths in a tower defense game or like the image shown, you can make missles look more cool flying in a curved path to the enemy like it's heat seeking
+                            </p>
+                        </aside>
+                    </div>
+                </article>
+            </section>
+
+            <button id = "progressbutton">Progress to Basic Types of interpolation</button>
+        </main>
+
+        <footer>
+            
+
+            <div id = "footer_flex">
+                <h2>Created by: Tan Yu Hong</h2>
+                
+                <div>
+                    <p>Check out more of my works:</p>
+                    <a href = "https://redmagicarp.itch.io/" target = "_blank">
+                        <img
+                        src = "images/itch_io.png"
+                        alt = "itch icon"
+                        title = "my itch website"
+                        >
+                    </a>
+                </div>
+            </div>
+
+            <section id = "qr_code">
+                <h2>Mobile View</h2>
+                <img
+                src = "images/mobile_qrcode.png"
+                alt = "qrcode_image"
+                title = "Mobile QrCode"
+                >
+            </section>
+        </footer>
+    </body>
+</html>
