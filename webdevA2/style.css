@@ -1,0 +1,970 @@
+/*============== */
+/* WEBSITE FONTS */
+/* ============= */
+@font-face {
+    font-family: "Kodakku";
+    src: url("fonts/kodakku.ttf");
+}
+
+@font-face {
+    font-family: "Atmospheric";
+    src: url(fonts/atmospheric.ttf);
+}
+
+@font-face {
+    font-family: "Monkirta_pursuit";
+    src: url(fonts/monkirta_pursuit.ttf);
+}
+
+
+/* ========================== */
+/*   Website Colour pallete   */
+/* ========================== */
+:root
+{
+    --mainColor: rgb(50, 21, 77);
+    --mainColor2:rgb(107, 65, 147);
+    --TopEndColor: rgb(17, 4, 43);
+    --secondaryColor: rgb(43, 12, 60);
+    --secondaryColor2: rgb(80, 61, 165);
+    --textColor: rgb(209, 228, 252);
+    --highlightColor: rgb(150, 134, 243);
+    --secondaryButtonColor: rgb(76, 21, 96);
+}
+
+/* ============== */
+/*   Animations   */
+/* ============== */
+
+@keyframes Header1FadeIn
+{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes ShineHeader
+{
+    0% 
+    {
+        opacity: 0;
+        left: 0;
+    }
+
+    50%
+    {
+        opacity: 1;
+        left: 48%;
+    }
+
+    100%
+    {
+        opacity: 0;
+        left: 96%;
+    }
+}
+
+/***************************************************************/
+/* Below is the animation to make a pulsing gradient background*/
+/***************************************************************/
+@keyframes LiveBackground {
+    0% {background: radial-gradient(var(--mainColor) 35%, var(--mainColor2));}
+    1% {background: radial-gradient(var(--mainColor) 36%, var(--mainColor2));}
+    2% {background: radial-gradient(var(--mainColor) 37%, var(--mainColor2));}
+    3% {background: radial-gradient(var(--mainColor) 38%, var(--mainColor2));}
+    4% {background: radial-gradient(var(--mainColor) 39%, var(--mainColor2));}
+    5% {background: radial-gradient(var(--mainColor) 40%, var(--mainColor2));}
+    6% {background: radial-gradient(var(--mainColor) 41%, var(--mainColor2));}
+    7% {background: radial-gradient(var(--mainColor) 42%, var(--mainColor2));}
+    8% {background: radial-gradient(var(--mainColor) 43%, var(--mainColor2));}
+    9% {background: radial-gradient(var(--mainColor) 44%, var(--mainColor2));}
+    10% {background: radial-gradient(var(--mainColor) 45%, var(--mainColor2));}
+    11% {background: radial-gradient(var(--mainColor) 46%, var(--mainColor2));}
+    12% {background: radial-gradient(var(--mainColor) 47%, var(--mainColor2));}
+    13% {background: radial-gradient(var(--mainColor) 48%, var(--mainColor2));}
+    14% {background: radial-gradient(var(--mainColor) 49%, var(--mainColor2));}
+    15% {background: radial-gradient(var(--mainColor) 50%, var(--mainColor2));}
+    16% {background: radial-gradient(var(--mainColor) 51%, var(--mainColor2));}
+    17% {background: radial-gradient(var(--mainColor) 52%, var(--mainColor2));}
+    18% {background: radial-gradient(var(--mainColor) 53%, var(--mainColor2));}
+    19% {background: radial-gradient(var(--mainColor) 54%, var(--mainColor2));}
+    20% {background: radial-gradient(var(--mainColor) 55%, var(--mainColor2));}
+    21% {background: radial-gradient(var(--mainColor) 56%, var(--mainColor2));}
+    22% {background: radial-gradient(var(--mainColor) 57%, var(--mainColor2));}
+    23% {background: radial-gradient(var(--mainColor) 58%, var(--mainColor2));}
+    24% {background: radial-gradient(var(--mainColor) 59%, var(--mainColor2));}
+    25% {background: radial-gradient(var(--mainColor) 60%, var(--mainColor2));}
+    26% {background: radial-gradient(var(--mainColor) 61%, var(--mainColor2));}
+    27% {background: radial-gradient(var(--mainColor) 62%, var(--mainColor2));}
+    28% {background: radial-gradient(var(--mainColor) 63%, var(--mainColor2));}
+    29% {background: radial-gradient(var(--mainColor) 64%, var(--mainColor2));}
+    30% {background: radial-gradient(var(--mainColor) 65%, var(--mainColor2));}
+    31% {background: radial-gradient(var(--mainColor) 66%, var(--mainColor2));}
+    32% {background: radial-gradient(var(--mainColor) 67%, var(--mainColor2));}
+    33% {background: radial-gradient(var(--mainColor) 68%, var(--mainColor2));}
+    34% {background: radial-gradient(var(--mainColor) 69%, var(--mainColor2));}
+    35% {background: radial-gradient(var(--mainColor) 70%, var(--mainColor2));}
+    36% {background: radial-gradient(var(--mainColor) 71%, var(--mainColor2));}
+    37% {background: radial-gradient(var(--mainColor) 72%, var(--mainColor2));}
+    38% {background: radial-gradient(var(--mainColor) 73%, var(--mainColor2));}
+    39% {background: radial-gradient(var(--mainColor) 74%, var(--mainColor2));}
+    40% {background: radial-gradient(var(--mainColor) 75%, var(--mainColor2));}
+    41% {background: radial-gradient(var(--mainColor) 76%, var(--mainColor2));}
+    42% {background: radial-gradient(var(--mainColor) 77%, var(--mainColor2));}
+    43% {background: radial-gradient(var(--mainColor) 78%, var(--mainColor2));}
+    44% {background: radial-gradient(var(--mainColor) 79%, var(--mainColor2));}
+    45% {background: radial-gradient(var(--mainColor) 80%, var(--mainColor2));}
+    46% {background: radial-gradient(var(--mainColor) 81%, var(--mainColor2));}
+    47% {background: radial-gradient(var(--mainColor) 82%, var(--mainColor2));}
+    48% {background: radial-gradient(var(--mainColor) 83%, var(--mainColor2));}
+    49% {background: radial-gradient(var(--mainColor) 84%, var(--mainColor2));}
+    50% {background: radial-gradient(var(--mainColor) 85%, var(--mainColor2));}
+    51% {background: radial-gradient(var(--mainColor) 84%, var(--mainColor2));}
+    52% {background: radial-gradient(var(--mainColor) 83%, var(--mainColor2));}
+    53% {background: radial-gradient(var(--mainColor) 82%, var(--mainColor2));}
+    54% {background: radial-gradient(var(--mainColor) 81%, var(--mainColor2));}
+    55% {background: radial-gradient(var(--mainColor) 80%, var(--mainColor2));}
+    56% {background: radial-gradient(var(--mainColor) 79%, var(--mainColor2));}
+    57% {background: radial-gradient(var(--mainColor) 78%, var(--mainColor2));}
+    58% {background: radial-gradient(var(--mainColor) 77%, var(--mainColor2));}
+    59% {background: radial-gradient(var(--mainColor) 76%, var(--mainColor2));}
+    60% {background: radial-gradient(var(--mainColor) 75%, var(--mainColor2));}
+    61% {background: radial-gradient(var(--mainColor) 74%, var(--mainColor2));}
+    62% {background: radial-gradient(var(--mainColor) 73%, var(--mainColor2));}
+    63% {background: radial-gradient(var(--mainColor) 72%, var(--mainColor2));}
+    64% {background: radial-gradient(var(--mainColor) 71%, var(--mainColor2));}
+    65% {background: radial-gradient(var(--mainColor) 70%, var(--mainColor2));}
+    66% {background: radial-gradient(var(--mainColor) 69%, var(--mainColor2));}
+    67% {background: radial-gradient(var(--mainColor) 68%, var(--mainColor2));}
+    68% {background: radial-gradient(var(--mainColor) 67%, var(--mainColor2));}
+    69% {background: radial-gradient(var(--mainColor) 66%, var(--mainColor2));}
+    70% {background: radial-gradient(var(--mainColor) 65%, var(--mainColor2));}
+    71% {background: radial-gradient(var(--mainColor) 64%, var(--mainColor2));}
+    72% {background: radial-gradient(var(--mainColor) 63%, var(--mainColor2));}
+    73% {background: radial-gradient(var(--mainColor) 62%, var(--mainColor2));}
+    74% {background: radial-gradient(var(--mainColor) 61%, var(--mainColor2));}
+    75% {background: radial-gradient(var(--mainColor) 60%, var(--mainColor2));}
+    76% {background: radial-gradient(var(--mainColor) 59%, var(--mainColor2));}
+    77% {background: radial-gradient(var(--mainColor) 58%, var(--mainColor2));}
+    78% {background: radial-gradient(var(--mainColor) 57%, var(--mainColor2));}
+    79% {background: radial-gradient(var(--mainColor) 56%, var(--mainColor2));}
+    80% {background: radial-gradient(var(--mainColor) 55%, var(--mainColor2));}
+    81% {background: radial-gradient(var(--mainColor) 54%, var(--mainColor2));}
+    82% {background: radial-gradient(var(--mainColor) 53%, var(--mainColor2));}
+    83% {background: radial-gradient(var(--mainColor) 52%, var(--mainColor2));}
+    84% {background: radial-gradient(var(--mainColor) 51%, var(--mainColor2));}
+    85% {background: radial-gradient(var(--mainColor) 50%, var(--mainColor2));}
+    86% {background: radial-gradient(var(--mainColor) 49%, var(--mainColor2));}
+    87% {background: radial-gradient(var(--mainColor) 48%, var(--mainColor2));}
+    88% {background: radial-gradient(var(--mainColor) 47%, var(--mainColor2));}
+    89% {background: radial-gradient(var(--mainColor) 46%, var(--mainColor2));}
+    90% {background: radial-gradient(var(--mainColor) 45%, var(--mainColor2));}
+    91% {background: radial-gradient(var(--mainColor) 44%, var(--mainColor2));}
+    92% {background: radial-gradient(var(--mainColor) 43%, var(--mainColor2));}
+    93% {background: radial-gradient(var(--mainColor) 42%, var(--mainColor2));}
+    94% {background: radial-gradient(var(--mainColor) 41%, var(--mainColor2));}
+    95% {background: radial-gradient(var(--mainColor) 40%, var(--mainColor2));}
+    96% {background: radial-gradient(var(--mainColor) 39%, var(--mainColor2));}
+    97% {background: radial-gradient(var(--mainColor) 38%, var(--mainColor2));}
+    98% {background: radial-gradient(var(--mainColor) 37%, var(--mainColor2));}
+    99% {background: radial-gradient(var(--mainColor) 36%, var(--mainColor2));}
+    100% {background: radial-gradient(var(--mainColor) 35%, var(--mainColor2));}
+}
+
+/* ===================== */
+/*   Initial CSS Rules   */
+/* ===================== */
+
+/* Body Reset */
+body
+{
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(var(--mainColor) 35%, var(--mainColor2));
+    animation: LiveBackground 7s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s infinite;
+}
+
+/* Default text color */
+h1, h2, h3, h4, h5, h6, p
+{
+    color: var(--textColor);
+}
+
+h1
+{
+    opacity: 0;
+    font-size: 8vw;
+    animation: Header1FadeIn 1.4s 0.5s cubic-bezier(0, 0.25, 0.6, 1) normal forwards;
+}
+
+
+img 
+{
+    max-width: 100%;
+    border-radius: 1.5rem;
+    
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: "Atmospheric";
+}
+
+p
+{
+    font-family: "Kodakku";
+    font-size: 1.2rem
+}
+
+button, nav li
+{
+    font-family: "Monkirta_pursuit";
+}
+
+/* ----------------- */
+/* === Utilities === */
+/* ----------------- */
+
+/* For shiny header animation */
+.shinyheader
+{
+    animation: ShineHeader 0.4s linear 0s;
+}
+
+/* Layout for text + 1 image / canvas */
+.oneimg_layoutcontainer
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.oneimg_layoutcontainer p
+{
+    flex: 1;
+    margin-right:15%;
+}
+
+.oneimg_layoutcontainer img
+{
+    display: block;
+    margin: 0 auto;
+}
+
+/* Layout for 1 text + 2 image / canvas */
+.twoimg_onetext_layoutcontainer
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 4fr;
+    gap: 2rem;
+}
+
+.twoimg_onetext_layoutcontainer p
+{
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+}
+
+.twoimg_onetext_layoutcontainer img
+{
+    grid-row: 2 / 3;
+    grid-column: auto;
+
+    margin: 0 auto;
+}
+
+
+/* Used to allow for the last card to have room to stack */
+.cardcontainer_extender
+{
+    min-height: 15rem;
+}
+
+/* For containers that are called cards in a cardcontainer */
+.card
+{
+    background-color: var(--secondaryColor);
+    margin: 25% auto;
+    padding: 1% 4%;
+    max-width: 85%;
+    border-radius: 3rem;
+    height: 80vh; /* Must stay fixed to allow for card stacking effect */
+
+    top: 4vh;
+    position: sticky;
+}
+
+
+/* BELOW IS FOR THE INTERPOLATION TYPES */
+.interpolationtype_section article
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin: 0 1rem;
+    height: 105vh;
+    margin-bottom: 20rem;
+}
+
+.interpolationtype_section .maincontent_container
+{
+    background-color: var(--secondaryColor);
+    padding: 1% 4%;
+    border-radius: 3rem;
+    width: 85%;
+    position: relative;
+    flex: 6;
+    min-height: 105vh;
+}
+
+.articleinfo_container
+{
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 2.5rem;
+    min-height: 18rem;
+    gap: 15vw;
+}
+
+.articleinfo_container p
+{
+    flex: 1;
+    margin-top: 3.5rem;
+}
+
+/* This controls the images in the interpolation section */
+.articleinfo_container div
+{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+}
+
+/* This controls the image infos */
+.articleinfo_container div p
+{
+    position: absolute;
+    margin-top: 0;
+    width: 40%;
+    height: 9rem;
+}
+
+.articleinfo_container div img
+{
+    position: absolute;
+}
+
+
+
+.interpolationtype_section aside
+{
+    flex: 2;
+    position: relative;
+    margin: 1% 0;
+    height: 105vh; /* Make it match the section */
+}
+
+.interpolationtype_section aside div
+{
+    background-color: var(--secondaryColor2);
+    padding: 1rem 2.5rem;
+    border-radius: 3rem;
+    height: 20rem;
+    position: sticky;
+    top: 3rem;
+}
+
+.application_article
+{
+    background-color: var(--secondaryColor2);
+    min-height: 200vh;
+    position: relative;
+    margin: 3% 0;
+}
+
+.applicationinfo_container
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    width: 95%;
+    margin: 2rem auto;
+
+    position: sticky;
+    top: 1.5vw;
+}
+
+.applicationinfo_container p
+{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    text-align: center;
+
+}
+
+.applicationinfo_container img
+{
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    margin: 0 auto;
+}
+
+.applicationinfo_container aside
+{
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+    background-color: var(--secondaryColor);
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 70%;
+    border-radius: 1rem;
+
+}
+
+.game_section
+{
+    width: 95vw;
+    height: 90vh;
+    background-color: rgb(15, 6, 32);
+    position: absolute;
+
+    opacity: 0;
+
+    bottom: 2%;
+    left: 2%;
+
+    transition: opacity 0.55s cubic-bezier(0.19, 1, 0.22, 1);
+
+    display: flex;
+}
+
+.game_section div /* For the buttons */
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 2%;
+    gap:1%
+
+}
+
+.game_section button /* For the buttons */
+{
+    background-color: var(--secondaryColor2);
+    color: var(--textColor);
+    border: var(--highlightColor) 2px solid;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border-width: 0.3em;
+    margin: 2% 0;
+    cursor: pointer;
+}
+/* Special buttons to start and stop the games! */
+button.start_interactive
+{
+    background-color: rgb(70, 181, 83);
+    border-color: rgb(113, 180, 105);
+    color: rgb(4, 71, 15);
+}
+
+/* This is to change the color to red and JS later changes text to stop simulation => Basically the toggled look of start_interactive button */
+button.start_interactive_active
+{
+    background-color: rgb(180, 60, 60);
+    border-color: rgb(80, 23, 23);
+    color: rgb(57, 6, 6);
+}
+
+div.game_container, .game_section canvas
+{
+    width: calc(90vh * (16/9));
+    height: 90vh;
+    background-color: aliceblue;
+    margin:0;
+    position: relative;
+
+    overflow:auto;
+}
+
+div.game_controls
+{
+    display: none; /* Disable controls until simulation is running! */
+
+}
+
+/* ---------------------- */
+/* === Header section === */
+/* ---------------------- */
+
+#menu_buttons
+{
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+    margin-bottom: 1%;
+}
+
+#mobile_fullscreen
+{
+    border-radius: 5rem;
+    border: 3px var(--highlightColor) solid;
+    background-color: var(--secondaryColor2);
+    color: var(--textColor);
+    padding: 0 3%;
+    display: none;
+}
+
+#header_nav
+{
+    background-color: var(--secondaryColor);
+    padding: 1% 0;
+}
+
+#header_nav ul
+{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+    width: 98%;
+    margin: 0 auto;
+}
+
+#header_nav li
+{
+    background-color: var(--secondaryColor2);
+    border-radius: 1rem;
+    padding: 1rem;
+    flex:1;
+    text-align: center;
+    color: var(--textColor);
+    margin: 0 0.4rem;
+    border: var(--textColor) 3px solid;
+    cursor: pointer; /* Makes the cursor show a pointer when hovering over it => simulate button */
+
+    transition: background-color 0.3s ease-out, padding 0.3s ease-out;
+
+    position: relative;
+}
+
+#header_nav #hamburger_icon
+{
+    border-radius: 0.5rem;
+    padding: 0.35rem 0.2rem;
+    border: var(--highlightColor) 2px solid;
+    background-color: var(--secondaryColor2);
+    cursor: pointer;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    max-width: 50px;
+
+    display: none;
+}
+
+/* Below handles the shiny effect of the nav */
+#header_nav li div
+{
+    width: 0.8rem;
+    height: 95%;
+    background: linear-gradient(0.25turn, var(--secondaryButtonColor), var(--highlightColor) 25%, var(--secondaryButtonColor) 75%);
+
+    position: absolute;
+    top: 2.5%;
+    left: 0; /*Max is 96%*/
+
+    opacity: 0;
+    border-radius: 15rem;
+}
+
+#header_nav li:hover
+{
+    background-color: var(--secondaryButtonColor);
+    border-color: var(--highlightColor);
+}
+
+#hero
+{
+    text-align: center;
+    background-color: var(--TopEndColor);
+    margin: 0;
+    padding: calc(65vh / 2) 0;
+
+    position: relative;
+}
+
+#hero canvas
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+}
+
+
+/* -------------------- */
+/* === Main section === */
+/* -------------------- */
+
+main h2
+{   
+    background-color: var(--secondaryColor);
+    padding: 2%;
+    max-width: 90%;
+    text-align: center;
+    font-size: 2rem;
+    margin: 1% auto;
+    border-radius: 15px;
+    box-sizing: border-box;
+    
+}
+
+main h3
+{   
+    max-width: 90%;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1% auto;
+    box-sizing: border-box;
+    padding: 1.2% 0;
+    border-bottom: var(--highlightColor) 2px solid;
+}
+
+main h4
+{   
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1% auto;
+    box-sizing: border-box;
+    padding: 1.2% 0;
+    border-bottom: var(--highlightColor) 2px solid;
+}
+
+main section
+{
+    padding: 5% 0;
+}
+
+#progressbutton
+{
+    background-color: var(--secondaryColor2);
+    border: var(--highlightColor) 2px solid;
+    color: var(--textColor);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    cursor: pointer;
+
+    z-index: 90; /* Ensure the button is always clickable */
+
+    transition: background-color 0.3s ease-out, padding 0.3s ease-out;
+}
+
+#progressbutton:hover
+{
+    background-color: var(--secondaryButtonColor);
+    padding: 1rem 2rem;
+}
+
+/******************/
+/* Games Sections */
+/******************/
+
+#animation_game
+{
+    background-color:rgb(85, 134, 139);
+}
+
+/* Animation Game */
+#hatsune_miku
+{
+    position: absolute;
+    background: url("images/hatsune_miku.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: calc(12vw);
+    height: calc(12vw);
+
+    display: none;
+    bottom: 0;
+}
+
+.knife
+{
+    position: absolute;
+    background: url("images/knives_sprite.png");
+    background-size: calc(20vw) calc(12vw); /* Size must be x4 of the width defined => 4 sprites*/
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: calc(5vw);
+    height: calc(12vw);
+
+}
+
+.game_controls input
+{
+    background-color: var(--secondaryColor2);
+    color: var(--textColor);
+
+    margin: 1% 0;
+    border: 1px var(--highlightColor) solid;
+    border-radius: 1rem;
+}
+
+/* ---------------------- */
+/* === Footer section === */
+/* ---------------------- */
+
+footer
+{
+    padding: 2% 0;
+    background-color: rgb(13, 13, 13);
+}
+
+
+#footer_flex
+{
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    
+}
+
+#footer_flex h2
+{
+    flex: 70%;
+}
+
+/* Mobile QR code */
+footer section h2
+{
+    text-align: center;
+    color: var(--textColor);
+}
+
+footer section img
+{
+    display: block;
+    margin: 0 auto;
+    border-radius: 1rem;
+    background-color: var(--highlightColor);
+}
+
+/* ==================== */
+/*   Mobile CSS Rules   */
+/* ==================== */
+
+@media (max-width: 800px)
+{
+    #mobile_fullscreen
+    {
+        display: block;
+    }
+
+    /* Rescale all of the headers */
+    main h2
+    {
+        
+        font-size: 1.3rem;
+    }
+
+     main h3
+    {
+        
+        font-size: 1rem;
+    }
+
+     main h4
+    {
+        
+        font-size: 0.85rem;
+    }
+
+    p
+    {
+        font-size: 0.9em;
+    }
+
+    .oneimg_layoutcontainer
+    {
+        flex-direction: column;
+    }
+
+    .oneimg_layoutcontainer p
+    {
+        margin-bottom: 3%;
+    }
+
+
+
+    /* Responsive Intro Below */
+
+    /* Make the header nav collapse into a hamburger menu */
+    #header_nav
+    {
+        width: 100vw;
+        z-index: 1;
+    }
+
+    #header_nav ul
+    {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Make the hamburger menu icon appear */
+    #header_nav #hamburger_icon
+    {
+        display: block;
+    }
+
+    /* Ensure image does not stretch out of fixed card size */
+    .twoimg_onetext_layoutcontainer
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 0.5rem;
+
+
+    }
+
+    .twoimg_onetext_layoutcontainer p
+    {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    .twoimg_onetext_layoutcontainer img
+    {
+        grid-row: auto;
+        grid-column: auto;
+
+        /* Ensure image does not stretch out of fixed card size */
+        max-width: 180px;
+    }
+
+
+    /* RESPONSIVE TYPES SECTION */
+    /* Below collapses the aside in interpolation type into a column view */
+    .interpolationtype_section
+    {
+        flex-direction: column;
+    }
+
+    /* BELOW ALLOWS ASIDE TO COLLAPSE TO COLUMN*/
+    .interpolationtype_section article
+    {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 40vh;
+        
+    }
+    
+    .interpolationtype_section aside
+    {
+        margin: 1%;
+    }
+
+
+    .interpolationtype_section aside div
+    {
+        position: relative;
+        height: auto; /* No longer need the aside to match section height as it collapse to column */
+        top: 0; /* Ensure no weird offset */
+    }
+
+    
+    .articleinfo_container
+    {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Below centers the article info items for mobile view */
+    .articleinfo_container p
+    {
+        text-align: center;
+    }
+
+
+    /* RESPONSIVE APPLICATIONS SECTION */
+    .applicationinfo_container
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+
+    /* RESPONSIVE GAME SECTION */
+    .game_section .start_interactive /* For the interactive button */
+    {
+        max-width: 10.5rem;
+        margin: 0 auto;
+    }
+
+     .game_section
+    {
+        flex-direction: column;
+    }
+
+    /* Ensure game_controls layout try to fit into the mobile size as much as possible */
+    div.game_controls
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    div.game_inputs
+    {
+        flex: 100%;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Uses width to calculate height as width becomes the limiting length */
+    div.game_container, .game_section canvas
+    {
+        width: 90vw;
+        height: calc(90vw * (9/16));
+
+        margin: 1vh auto;
+    }
+
+    /* RESPONSIVE FOOTER */
+    #footer_flex
+    {
+        justify-content: center;
+    }
+
+    #footer_flex h2, #footer_flex a
+    {
+        gap: 0;
+        flex: 100%;
+        
+    }
+
+    #footer_flex a img
+    {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #footer_flex h2
+    {
+        text-align: center;
+    }
+
+    #qr_code /* Hide QR code in mobile view */
+    {
+        display: none;
+    }
+}
