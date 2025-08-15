@@ -208,6 +208,121 @@ main section.mainsection
 }
 
 
+/****************************/
+/* NOTE REVIEWER PAGE RULES */
+/****************************/
+
+/* BUTTONS */
+#upload_notes
+{
+    background-color: #e8e8e8;
+    border: #343843 3px dotted;
+    border-radius: 2rem;
+    margin: 5% auto;
+    max-width: 75%;
+
+    text-align: center;
+    cursor: pointer;
+}
+
+#upload_notes img
+{
+    display: block;
+    margin: 5% auto;
+}
+
+#review
+{
+    font-size: 2rem;
+    border-radius: 1rem;
+    background-color: #c0c7d9;
+    border: #1c1c4a 2px solid;
+    display: block;
+    margin: 5% auto;
+    padding: 0.1rem 1rem;
+}
+
+#save_note
+{
+    font-size: 2rem;
+    border-radius: 1rem;
+    background-color: #a1d496;
+    border: #3f952e 2px solid;
+    display: none;
+    margin: 5% auto;
+    padding: 0.1rem 1rem;
+    
+}
+
+#view_notestore
+{
+    font-size: 2rem;
+    border-radius: 1rem;
+    background-color: #d8cbdd;
+    border: #261a31 2px solid;
+    display: block;
+    margin: 5% auto;
+    padding: 0.1rem 1rem;
+}
+
+/* CONTENT */
+#user_note
+{
+    display: block;
+    margin: 5% auto;
+    max-width: 90vw;
+
+    display: none;
+}
+
+#review_results
+{
+    display: none;
+}
+
+#mistakes ul, #rephrases ul
+{
+    list-style-type: none;
+}
+
+#mistakes h2
+{
+    margin-left: 1rem;
+    padding-left: 2.5rem;
+    max-width: 35%;
+    color: #aa3939;
+    border: #aa3939 2px solid;
+}
+
+#mistakes h3
+{
+    color: #aa3939;
+}
+
+#mistakes p
+{
+    color: #5a2121;
+}
+
+#rephrases h2
+{
+     margin-left: 1rem;
+    padding-left: 1.5rem;
+    max-width: 35%;
+    color: #64228a;
+    border: #64228a 2px solid;
+}
+
+#rephrases h3
+{
+    color: #64228a;
+}
+
+#rephrases p
+{
+    color: #331246;
+}
+
 /***************************************/
 /* AI STUDY MAT GEN SECTION PAGE RULES */
 /***************************************/

@@ -5,21 +5,39 @@
 class AI {
     constructor() {
         this.response_list = {
-            1 : {
-                starter_response: "Hello! What do you need?",
-                "plan for me": "Here is a timetable!",
-            },
+
             2 : {
                 starter_response: "Hello! What do you need help with?",
                 math: {
                     [LearningStyles.Flashcard]: "Math Flashcards here!",
                     [LearningStyles.Video]: "Math Video here!",
                     [LearningStyles.Summary]: "Math Summary here!",
+                    
+                },
+
+                "Help me focus":{
+                    [LearningStyles.Flashcard]: "Activating focus mode",
+                    [LearningStyles.Video]: "Activating focus mode",
+                    [LearningStyles.Summary]: "Activating focus mode",
+                },
+
+                "I am done studying":{
+                    [LearningStyles.Flashcard]: "Deactivating focus mode",
+                    [LearningStyles.Video]: "Deactivating focus mode",
+                    [LearningStyles.Summary]: "Deactivating focus mode",
+                },
+
+                "xS_3432qHaS3aSF44sxSAZ":{
+                    [LearningStyles.Flashcard]: "You are already in focus mode",
+                    [LearningStyles.Video]: "You are already in focus mode",
+                    [LearningStyles.Summary]: "You are already in focus mode",
                 }
             },
             3 : {
                 starter_response: "Hello! How are you feeling?",
-                bad: "Oh no! What is making you feel this way?",
+                Bad: "Oh no! What is making you feel this way?",
+                Good: "Glad you feel that way!",
+                "Help me focus" : "Activating focus mode",
             }
         };
         this.unrecognised_response = "Sorry, that is beyond my capabilities!";
@@ -27,14 +45,33 @@ class AI {
 
     respond(message, admin = false) {
         if (message == "starter_response" && !admin) {return "You sneaky sneaky man";}
-        switch (CurrentPage) {
-            case 1:
-                const data = this.response_list[1];
-                if (message in data) {
-                    return data[message] || this.unrecognised_response;
-                }
-                return this.unrecognised_response;
 
+        //Toggle focus mode before sending message//
+        if (message == "Help me focus" && !FocusMode)
+        {
+            FocusMode = true;
+
+            if (CurrentPage == 3) //In Chat mode
+            {
+                setTimeout(function(){
+                    LoadPage(2)
+                }, 700)
+            }
+        }
+        else if (message == "Help me focus")
+        {
+            message = "xS_3432qHaS3aSF44sxSAZ";
+        }
+        else if (message == "I am done studying" && FocusMode)
+        {
+            FocusMode = false;
+        }
+        else if (message == "I am done studying")
+        {
+            message = "ER!R3RRR7ORRORO!@8RROR#@923OR0#R454ROR0"
+        }
+        
+        switch (CurrentPage) {
             case 2:
                 if (LearningStyle === LearningStyles.None && message !== "starter_response") {
                     console.log("ERROR: no learning preference selected.");
@@ -90,6 +127,14 @@ const LearningPreferences = document.querySelector("#settings_page div");
 
 const BreakNotificationContainer = document.getElementById("break_notification");
 
+const NoteReviewerSection = document.getElementById("ai_note_reviewer");
+const UserNote = document.getElementById("user_note");
+const UploadNotes = document.getElementById("upload_notes");
+const ViewStoredNotes = document.getElementById("view_notestore");
+const ReviewResults = document.getElementById("review_results");
+const SaveNoteButton = document.getElementById("save_note");
+const ReviewButton = document.getElementById("review");
+
 //== GLOBAL VARS ==//
 let LearningStyles = {
     Flashcard : "Flashcard",
@@ -105,6 +150,8 @@ let CurrentPage = 0;
 
 let NavMenuEnabled = false;
 let SettingsMenuState = true;
+
+let FocusMode = false;
 
 
 const ChatAI = new AI();
@@ -124,14 +171,14 @@ function LoadPage(pageID)
 
     CurrentPage = parseInt(pageID);
 
-    if (CurrentPage > 0)
+    if (CurrentPage > 1)
     {
         DisplayFooter(true);
 
-        if (ChatContainers[CurrentPage - 1].children.length == 0)
+        if (ChatContainers[CurrentPage - 2].children.length == 0)
         {
             let AI_Response = ChatAI.respond("starter_response", true);
-            let container = ChatContainers[CurrentPage - 1];
+            let container = ChatContainers[CurrentPage - 2];
 
             CreateChatBubble(AI_Response, container, true);
         }
@@ -170,25 +217,28 @@ function ToggleMenu()
 
 function DisplayBreakNotification()
 {
-    const P_notification = document.createElement("p");
+    if (!FocusMode)
+    {
+        const P_notification = document.createElement("p");
 
-    P_notification.innerHTML = "Hey! You should take a break right now!";
+        P_notification.innerHTML = "Hey! You should take a break right now!";
 
-    const newBreakNotification = document.createElement("div");
+        const newBreakNotification = document.createElement("div");
 
-    newBreakNotification.appendChild(P_notification);
+        newBreakNotification.appendChild(P_notification);
 
-    newBreakNotification.id = "break_notification";
+        newBreakNotification.id = "break_notification";
 
-    body.appendChild(newBreakNotification);
+        body.appendChild(newBreakNotification);
 
-    const MiddleDistance = Math.abs((window.innerWidth * 0.5) - (newBreakNotification.offsetWidth * 0.5))
+        const MiddleDistance = Math.abs((window.innerWidth * 0.5) - (newBreakNotification.offsetWidth * 0.5))
 
-    newBreakNotification.style.left = `${MiddleDistance}px`;
+        newBreakNotification.style.left = `${MiddleDistance}px`;
 
-    setTimeout(function(){
-        body.removeChild(newBreakNotification);
-    }, 2000);
+        setTimeout(function(){
+            body.removeChild(newBreakNotification);
+        }, 2000);
+    }
 }
 
 function SetSettingsMenuState(state)
@@ -247,7 +297,16 @@ function HeaderOnClick(event)
     if (event.target.id.substring(0, 11) === "mainsection")
     {
         const PageIndex = event.target.id.substring(12);
-        LoadPage(PageIndex);
+        if (PageIndex == 0  || PageIndex == 3)
+        {
+            if (FocusMode) {return;}
+
+            LoadPage(PageIndex);
+        }
+        else
+        {
+            LoadPage(PageIndex);
+        }
     }
 }
 
@@ -284,6 +343,50 @@ function OnClickHomePageButton(event)
     }
 }
 
+
+function NoteReviewSectionClickListner(event)
+{
+    event.preventDefault();
+
+    if (event.target.closest("#upload_notes") !== null)
+    {
+        UploadNotes.style.display = "none";
+        UserNote.style.display = "block";
+    }
+
+    else if (event.target.id == "review")
+    {
+        if (UserNote.style.display === "block")
+        {
+            event.target.style.display = "none";
+
+            UserNote.src = "images/notes_revised.png";
+            ViewStoredNotes.style.display = "none";
+            
+
+            ReviewResults.style.display = "block";
+            SaveNoteButton.style.display = "block";
+        }
+    }
+
+    else if (event.target.id == "save_note")
+    {
+        event.target.style.display = "none";
+
+        //Reset everything below//
+        UserNote.style.display = "none";
+        UserNote.src = "images/notes.jpg";
+
+        ReviewResults.style.display = "none";
+
+        ReviewButton.style.display = "block";
+        UploadNotes.style.display = "block";
+        ViewStoredNotes.style.display = "block";
+
+
+    }
+}
+
 function CreateChatBubble(message, chatContainer, IsAdmin = false)
 {
     let msg = document.createElement("p");
@@ -307,13 +410,13 @@ function CreateChatBubble(message, chatContainer, IsAdmin = false)
 //= User Functions =//
 function SendResponse() 
 {
-    const CurrentChatContainerIndex = CurrentPage - 1;
+    const CurrentChatContainerIndex = CurrentPage - 2;
 
     if (CurrentChatContainerIndex < 0 && CurrentChatContainerIndex >= ChatContainers.length) { return 0; }
 
     let user_input = InputField.value.trim();
 
-    let container = ChatContainers[CurrentPage - 1];
+    let container = ChatContainers[CurrentPage - 2];
 
     let AI_response = ChatAI.respond(user_input);
 
@@ -371,6 +474,9 @@ function main()
         event.preventDefault();
         SendResponse();
     });
+
+    //Link NoteReviewerClickEvent//
+    NoteReviewerSection.addEventListener("click", NoteReviewSectionClickListner);
 
     //Link Rest Timer to every 45s
     setInterval(DisplayBreakNotification, 27000)

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <link rel="stylesheet" href="style.css">
         <script src = "main.js" defer></script>
-        <title>Concept Ideation MVP 1</title>
+        <title>Concept Ideation MVP 2</title>
     </head>
 
     <body>
@@ -17,9 +17,9 @@
 
             <nav class = "page_navigation">
                 <ul>
-                    <li id = "mainsection_1">AI Study Planner</li>
-                    <li id = "mainsection_2">AI Study Materials Generator</li>
-                    <li id = "mainsection_3">AI Study Mode</li>
+                    <li id = "mainsection_1">Note Reviewer</li>
+                    <li id = "mainsection_2">Study Materials Generator</li>
+                    <li id = "mainsection_3">Chat</li>
                 </ul>
             </nav>
         </header>
@@ -34,9 +34,9 @@
                 <div id = "homepage_buttons">
                     <h2>Home Page</h2>
 
-                    <button class = "feature_button" id = "mainsectionhome_1">AI STUDY PLANNER</button>
-                    <button class = "feature_button" id = "mainsectionhome_2">AI STUDY MATERIALS GENERATOR</button>
-                    <button class = "feature_button" id = "mainsectionhome_3">AI STUDY MODE</button>
+                    <button class = "feature_button" id = "mainsectionhome_1">NOTE REVIEWER</button>
+                    <button class = "feature_button" id = "mainsectionhome_2">STUDY MATERIALS GENERATOR</button>
+                    <button class = "feature_button" id = "mainsectionhome_3">CHAT</button>
 
                     <div id = "ai_buddy_container">
                         <p id = "ai_buddy_speech">How is your day?</p>
@@ -46,8 +46,66 @@
                 </div>
             </section>
 
-            <section id = "ai_study_planner" class = "mainsection">
-                <div class = "chat_container"></div>
+            <section id = "ai_note_reviewer" class = "mainsection">
+                <div id = "upload_notes">
+                    <img
+                    src = "images/upload_Icon.png"
+                    alt = "upload_icon"
+                    title = "upload"
+                    >
+
+                    <p>Upload Notes</p>
+                </div>
+
+                <img
+                    id = "user_note"
+                    src = "images/notes.jpg"
+                    alt = "notes"
+                    title = "notes"
+                >
+
+                <div id = "review_results">
+                    <section id = "mistakes">
+                        <h2>Mistakes</h2>
+
+                        <ul>
+                            <li>
+                                <h3>"Stop climate change"</h3>
+
+                                <p>There seems to be a misconception here, you cannot <str>stop</str> climate change, but slow down its progress!</p>
+                            </li>
+                        </ul>
+
+                    </section>
+
+                    <section id = "rephrases">
+                        <h2>Rephrases</h2>
+
+                        <ul>
+                            <li>
+                                <h3>"Have countries ageree on a plan to be more sustainable"</h3>
+
+                                <p>A better way to say it could be - Govermnents can be part of an international agreement such as the Paris Agreement.</p>
+                            </li>
+
+                            <li>
+                                <h3>"live their lives"</h3>
+
+                                <p>I think you should change the wording to - their habits in life.</p>
+                            </li>
+
+                            <li>
+                                <h3>"Use tech that help grow vegetables more effectively in places that may suffer from drought"</h3>
+
+                                <p>Maybe try - Use tech which improves vegetation growth in areas that are affected by drought caused by climate change.</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <button id = "review">REVIEW</button>
+                <button id = "view_notestore">View Stored Notes</button>
+                <button id = "save_note">Save Note</button>
             </section>
 
             
@@ -70,7 +128,6 @@
                 </section>
 
                 <div class = "chat_container">
-
                 </div>
             </section>
 
